@@ -1,27 +1,3 @@
-// import React from 'react';
-// import renderQuestionDetails from '../utils/renderQuestionDetails';
-
-// const QuestionCard = ({ question }) => {
-//   return (
-//     <div 
-//       style={{ 
-//         border: '1px solid #ddd', 
-//         padding: '15px', 
-//         margin: '10px 0',
-//         borderRadius: '5px',
-//         color:'white'
-//       }}
-//     >
-//       <h3>{question.type}</h3>
-//       {renderQuestionDetails(question)}
-//     </div>
-//   );
-// };
-
-// export default QuestionCard;
-
-
-
 import React from 'react';
 import QuestionDetails from './QuestionDetails';
 import speak from '../utils/textToSpeech';

@@ -1,14 +1,13 @@
 import React from 'react';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
-  // Calculate range of page numbers to display
+
   const getPageRange = () => {
     const range = [];
     const maxVisiblePages = 5;
     let start = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
     let end = Math.min(totalPages, start + maxVisiblePages - 1);
 
-    // Adjust start if we're near the end
     if (end === totalPages) {
       start = Math.max(1, totalPages - maxVisiblePages + 1);
     }
@@ -19,7 +18,6 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     return range;
   };
 
-  // Prevent rendering if no pagination needed
   if (totalPages <= 1) return null;
 
   return (
@@ -29,7 +27,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
       alignItems: 'center', 
       marginTop: '20px' 
     }}>
-      {/* Previous Arrow */}
+
+
       <button 
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
@@ -46,7 +45,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         &#9664;
       </button>
 
-      {/* Page Numbers */}
+
       {getPageRange().map(page => (
         <button 
           key={page}
@@ -65,7 +64,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
         </button>
       ))}
 
-      {/* Next Arrow */}
+
       <button 
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
